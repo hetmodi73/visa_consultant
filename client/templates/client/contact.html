@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{#{% load crispy_forms_field %}#}
 <html lang="en">
 <head>
 <title>{% block title %}
@@ -32,6 +33,18 @@
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 	<!-- //web-fonts -->
+
+{% block extra_css %}
+<!-- daterange picker -->
+  <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+
+{% endblock %}
 
 </head>
 
@@ -124,17 +137,122 @@
 				<div class="col-lg-7 map ">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26359195.17562375!2d-113.7156245614499!3d36.2473834534249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1452332634941"></iframe>
 				</div>
-					<div class="col-lg-5 mail-grid1-form ">
-						<h3 class="tittle-w3"><span>Send a </span>Message</h3>
-						<form action="#" method="post">
-                            {% csrf_token %}
-							<input type="text" name="Name" placeholder="Your Name" required="" />
-							<input type="text" name="phone" placeholder="Your Phone" required="" />
-							<input type="email" name="Email" placeholder="your Email" required="" />
-							<textarea name="Message" placeholder="Your Message...." required=""></textarea>
-							<input type="submit" value="Submit">
-						</form>
-					</div>
+
+{#					<div class="col-lg-5 mail-grid1-form ">#}
+{#						<h3 class="tittle-w3"><span>Send a </span>Message</h3>#}
+{#						<form action="#" method="post">#}
+{#                            {% csrf_token %}#}
+{#                            <input type="text" name="CONTACT_ID" placeholder="Your Contact Id" required="" />#}
+{#                            <br></br>#}
+{#							<input type="text" name="NAME" placeholder="Your Name" required="" />#}
+{#                            <br></br>#}
+{#                            <input type="email" name="EMAIL" placeholder="Your Email" required="" />#}
+{#							<br></br>#}
+{#                            <input type="text" name="NUMBER" placeholder="Your Phone" required="" />#}
+{#							<br></br>#}
+{#                            <textarea name="MESSAGE" placeholder="Your Message..." required="", rows="3", cols="50"></textarea>#}
+{#							<br></br>#}
+{#                            <input type="submit" value="Submit">#}
+{#						</form>#}
+{#					</div>#}
+
+{#-----------------------------------------------------------------------#}
+
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h4 align="center"> Send a message... </h4>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form method="POST">
+              {% csrf_token %}
+                <div class="card-body">
+
+                    <!-- /.form group -->
+                  <div class="form-group">
+                    <label for="exampleInputPetrolrate">Contact Id</label>
+{#                      {% crispy_field form.CONTACT_ID %}#}
+                      {% if  form.CONTACT_ID.errors %}
+                          {% for error in form.CONTACT_ID.errors %}
+                              <div class="invalid-feedback">
+                                  {{ error }}
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  </div>
+
+
+                    <div class="form-group">
+                    <label for="exampleInputDieselrate">Name</label>
+                    <div class="input-group">
+{#                      {% crispy_field form.NAME %}#}
+                        {% if  form.NAME.errors %}
+                            {% for error in form.NAME.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    </div>
+
+                        <div class="form-group">
+                    <label for="exampleInputDieselrate">Email Id</label>
+                    <div class="input-group">
+{#                      {% crispy_field form.EMAIL %}#}
+                        {% if  form.EMAIL.errors %}
+                            {% for error in form.EMAIL.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                        </div>
+
+                    <div class="form-group">
+                    <label for="exampleInputDieselrate">Number</label>
+                    <div class="input-group">
+{#                      {% crispy_field form.NUMBER %}#}
+                        {% if  form.NUMBER.errors %}
+                            {% for error in form.NUMBER.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                        </div>
+
+                    <div class="form-group form-group col-lg-4 col-lg-4">
+                    <label>Message</label>
+                    <div class="input-group">
+{#                      {% crispy_field form.MESSAGE %}#}
+                        {% if  form.MESSAGE.errors %}
+                            {% for error in form.MESSAGE.errors %}
+                                <div class="invalid-feedback">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+
+
+                <!-- /.card-body -->
+
+                <div class="card-footer" align="center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+            <!-- general form elements -->
+{#----------------------------------------------------------------------#}
+
 					<div class="clearfix"></div>
 				</div>
 				</div>
@@ -291,6 +409,29 @@
 	<!-- start-smoth-scrolling -->
 
 <!-- //js-scripts -->
+
+{% block extra_js %}
+    <!-- bs-custom-file-input -->
+    <script src=" {% static 'plugins/bs-custom-file-input/bs-custom-file-input.min.js' %} "></script>
+
+    <!-- InputMask -->
+    <script src="{% static 'plugins/moment/moment.min.js'%}"></script>
+    <script src="{% static 'plugins/inputmask/jquery.inputmask.min.js'%}"></script>
+    <!-- date-range-picker -->
+    <script src="{% static 'plugins/daterangepicker/daterangepicker.js'%}"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{% static 'plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js'%}"></script>
+<script>
+$(function () {
+    <!-- bootstrap color picker -->
+    //Date range picker
+    $('#reservationdate').datetimepicker({
+        format: 'YYYY-MM-DD'
+    });
+});
+</script>
+
+{% endblock %}
 
 </body>
 </html>

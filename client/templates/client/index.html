@@ -40,7 +40,7 @@
 
 </head>
 
-<body>
+<br>
 
 <!-- Navigation -->
 <header>
@@ -81,6 +81,14 @@
 						<li class="nav-item">
 							<a class="nav-link" href="contact.html">Contact</a>
 						</li>
+                        <li class="nav-item">
+                            <a href="{% url 'logout' %}" class="nav-link">
+                          <i class="nav-icon fas fa-power-off"></i>
+                          <p>
+{#                              Logout#}
+                          </p>
+                            </a>
+                        </li>
 					</ul>
 				</div>
 			</nav>
@@ -405,7 +413,7 @@ Professional Education for Your Future.</h3>
 	</div>
 	<!-- //stats -->
 
-
+<br></br>
 <!-- appointment -->
 <div class="appointment" id="appointment">
 <div class="container-fluid  py-md-3">
@@ -414,42 +422,70 @@ Professional Education for Your Future.</h3>
 		</div>
 		<div class="col-md-7 about-bottomr-agileits">
 			<div class="appointment_head">
-				<h3>Make An Appointment </h3>
+				<h3> User Information </h3>
 			</div>
 				<div class="form-agileits">
-				<form action="#" method="post">
+				<br action="#" method="post">
                     {% csrf_token %}
-				<h6>Personal information</h6>
-						<input class="name" type="text" name="First Name" placeholder="First Name" required="">
-						<input type="text" name="Last Name" placeholder="Last Name" required="">
-						<input class="name" type="email" name="Email" placeholder="Email" required="">
-						<input type="text" name="Phone" placeholder="Phone" required="">
+{#				<h6>Personal information</h6>#}
+
+                    <h6>EMAIL_ID</h6>
+                        <input class="name" type="email" name="EMAIL_ID" placeholder="Please enter your Email" required="">
+						<br><br/>
+                    <h6>PASSWORD</h6>
+                        <input class="name" type="password" name="PASSWORD" placeholder="Please enter your password" required="">
+						<br><br/>
+                    <h6>NAME</h6>
+                        <input type="text" name="NAME" placeholder="Please enter your Name" required="">
+                        <br><br/>
+                    <h6>PHONE_NO</h6>
+						<input type="text" name="PHONE_NO" placeholder="Please enter your Number" required="">
+                        <br><br/>
 						<div class="clearfix"> </div>
-					<h6>Service and date</h6>
+					<h6>GENDER</h6>
 						<select class="form-control name">
-							<option>Please Select Your Service</option>
-							<option>Post-recovery</option>
-							<option>Post-Trauma</option>
-							<option>Migraines</option>
-							<option>Chronic Pains</option>
+{#                        <select>#}
+							<option>Please Select Your Gender</option>
+							<option>male</option>
+							<option>female</option>
+							<option>other</option>
 						</select>
-						<input  id="datepicker1" name="Text" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" placeholder="mm/dd/yyyy" required="">
-					<div class="clearfix"> </div>
-						<div class="wthree-text">
-							<ul>
-								<li>
-									<label class="anim">
-										<input type="checkbox" class="checkbox">
-										<span> Please send me latest news & updates</span>
-									</label>
-								</li>
-							</ul>
-							<div class="clearfix"> </div>
-						</div>
+                        <br></br>
+                    <h6>ADDRESS</h6>
+                        <textarea name="ADDRESS", cols="40", rows="3"></textarea>
+                        <br><br/>
+                    <h6>ROLE</h6>
+                        <input type="text" name="ROLE" placeholder="Please enter your Role" required="">
+                        <br><br/>
+                    <h6>STATUS</h6>
+                    	<select class="form-control name">
+							<option>Please Select Your Option</option>
+							<option>Active</option>
+							<option>Inactive</option>
+						</select>
+                    <br></br>
 						<input type="submit" value="Submit">
+
+
+                    {##}
+{#						<input  id="datepicker1" name="Text" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" placeholder="mm/dd/yyyy" required="">#}
+{#					<div class="clearfix"> </div>#}
+{#						<div class="wthree-text">#}
+{#							<ul>#}
+{#								<li>#}
+{#									<label class="anim">#}
+{#										<input type="checkbox" class="checkbox">#}
+{#										<span> Please send me latest news & updates</span>#}
+{#									</label>#}
+{#								</li>#}
+{#							</ul>#}
+{#							<div class="clearfix"> </div>#}
+{#						</div>#}
+
 				</form>
 				</div>
 		</div>
+
 		<div class="clearfix"> </div>
 		</div>
 		</div>
@@ -709,5 +745,3 @@ fit: true
 
 </body>
 </html>
-
-
