@@ -15,19 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from client.views import index,about,contact,gallery,services,typography
+
+# from client.views import index,about,contact,gallery,services,typography
 from django.contrib.auth.views import LoginView,LogoutView
 from django .conf import settings
 from django .conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/',index,name="index"),
-    path("",LoginView.as_view(template_name="client/login.html"),name="login"),
-    path("logout",LogoutView.as_view(template_name="client/logout.html"),name="logout"),
-    path("about/",about,name="about"),
-    path("contact/",contact,name="contact"),
-    path("gallery/",gallery,name="gallery"),
-    path("services/",services,name="services"),
-    path("typography/",typography,name="typography")
+    path('',include('client.urls')),
+    path("", LoginView.as_view(template_name="client/login.html"), name="login"),
+    path("logout", LogoutView.as_view(template_name="client/logout.html"), name="logout"),
+
+    # path('index/',index,name="index"),
+    # path("about/",about,name="about"),
+    # path("contact/",contact,name="contact"),
+    # path("gallery/",gallery,name="gallery"),
+    # path("services/",services,name="services"),
 ]

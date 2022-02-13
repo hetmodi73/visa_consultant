@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>contact</title>
+
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+	<!-- css files -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{% static 'css/style.css" type="text/css' %}" media="all" /> <!-- Style-CSS -->
+	<link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %}"> <!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+
+		<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<!-- //web-fonts -->
+
+</head>
+<body>
+
+                <!--/ table3 -->
+			    <h4 class="typo-sub-heading mt-4 mb-3", align="center"> DATA OF USER'S CONTACT </h4>
+								<table class="table">
+						  <thead class="thead-dark">
+							<tr>
+                                <th scope="col">CONTACT_ID</th>
+							    <th scope="col">NAME</th>
+                                <th scope="col">EMAIL</th>
+                                <th scope="col">NUMBER</th>
+                                <th scope="col">MESSAGE</th>
+							</tr>
+						  </thead>
+						  <tbody>
+
+                            {% for contact in client %}
+                            <tr>
+                                <td>{{ contact.CONTACT_ID }}</td>
+                                <td>{{ contact.NAME }}</td>
+                                <td>{{ contact.EMAIL }}</td>
+                                <td>{{ contact.NUMBER }}</td>
+                                <td>{{ contact.MESSAGE }}</td>
+                            </tr>
+                            {% endfor %}
+
+                          </tbody>
+						</table>
+
+						   <!--// table3 -->
+
+<!-- js-scripts -->
+
+	<!-- js -->
+	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+	<!-- //js -->
+	<!-- start-smoth-scrolling -->
+	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+
+<!-- //js-scripts -->
+
+</body>
+</html>
+

@@ -39,6 +39,6 @@ class showfeedback(admin.ModelAdmin):
 admin.site.register(feedback,showfeedback)
 
 class showcontact(admin.ModelAdmin):
-    list_display = ['CONTACT_ID','NAME','EMAIL','NUMBER','MESSAGE']
+    list_display = ['NAME','EMAIL','NUMBER','MESSAGE']
 
 admin.site.register(contact,showcontact)
