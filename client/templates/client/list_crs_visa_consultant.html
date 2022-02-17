@@ -3,7 +3,7 @@
 {% load static %}
 <head>
     <meta charset="UTF-8">
-    <title>document</title>
+    <title>crs</title>
 
 	<script type="application/x-javascript">
 		addEventListener("load", function () {
@@ -29,24 +29,45 @@
 </head>
 <body>
                 <!--/ table3 -->
-			    <h4 class="typo-sub-heading mt-4 mb-3", align="center"> DATA OF USER'S DOCUMENT </h4>
+			    <h4 class="typo-sub-heading mt-4 mb-3", align="center"> DATA OF CRS </h4>
+
+<!--				<ul class="header-dropdown m-r&#45;&#45;5">-->
+<!--                                <li class="dropdown">-->
+<!--&lt;!&ndash;                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <i class="material-icons">more_vert</i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--                                    <ul class="dropdown-menu pull-right">-->
+<!--                                        <li><a href="javascript:void(0);">Action</a></li>-->
+<!--                                        <li><a href="javascript:void(0);">Another action</a></li>-->
+<!--                                        <li><a href="javascript:void(0);">Something else here</a></li>-->
+<!--                                    </ul>-->
+<!--                                </li>-->
+<!--				</ul>-->
+
 								<table class="table">
 						  <thead class="thead-dark">
 							<tr>
-							  <th scope="col">LOGIN ID</th>
-							  <th scope="col">DOCUMENT NAME</th>
-							  <th scope="col">DOCUMENT FILE</th>
-							  <th scope="col">SERVICE ID</th>
+							  <th scope="col">Name</th>
+							  <th scope="col">Age</th>
+							  <th scope="col">Email</th>
+							  <th scope="col">Telephone</th>
+                              <th scope="col">Action</th>
 							</tr>
 						  </thead>
 						  <tbody>
 
-                            {% for document in client %}
+                            {% for crs_visa_consultant in client %}
                             <tr>
-                                <td>{{ document.L_ID }}</td>
-                                <td>{{ document.DOCUMENT_NAME }}</td>
-                                <td>{{ document.DOCUMENT_FILE }}</td>
-                                <td>{{ document.SERVICE_ID }}</td>
+                                <td>{{ crs.root_contact_details_name }}</td>
+                                <td>{{ crs.root_age }}</td>
+                                <td>{{ crs.root_contact_details_email }}</td>
+                                <td>{{ crs.root_contact_details_telephone }}</td>
+                                <td>
+                                    <a href="{% url 'crs-detail'  crs.id %}" class="btn btn-success">
+                                       <li class="fas fa-file-invoice"></li> Detail
+                                    </a>
+                                </td>
+
                             </tr>
                             {% endfor %}
 

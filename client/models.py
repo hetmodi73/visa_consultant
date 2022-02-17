@@ -110,3 +110,57 @@ class contact(models.Model):
     def get_absolute_url(self):
         return reverse('contact-list_contact_visa_consultant')
 
+class crs(models.Model):
+    root_age=models.IntegerField()
+    root_education_level=models.CharField(max_length=35)
+    choice1=(
+        ('true','true'),
+        ('false','false')
+    )
+    root_studied_in_canada=models.CharField(max_length=35, choices=choice1)
+    root_english_reading=models.CharField(max_length=35)
+    root_english_speaking=models.CharField(max_length=35)
+    root_english_listening=models.CharField(max_length=35)
+    root_english_writing=models.CharField(max_length=35)
+    root_french_reading=models.CharField(max_length=35)
+    root_french_speaking=models.CharField(max_length=35)
+    root_french_listening=models.CharField(max_length=35)
+    root_french_writing=models.CharField(max_length=35)
+    root_work_foreign_skilled_work_years=models.CharField(max_length=35)
+    root_work_canadian_skilled_work_years=models.CharField(max_length=35)
+    choice2=(
+        ('true','true'),
+        ('false','false')
+    )
+    root_maratial_status=models.CharField(max_length=35, choices=choice2)
+    choice3=(
+        ('true','true'),
+        ('false','false')
+    )
+    root_spouse_siblings=models.CharField(max_length=35, choices=choice3)
+    choice4=(
+        ('true','true'),
+        ('false','false')
+    )
+    root_trades_certificate=models.CharField(max_length=35, choices=choice4)
+    choice5=(
+        ('true','true'),
+        ('false','false')
+    )
+    root_nomination_certificate=models.CharField(max_length=35, choices=choice5)
+    choice6=(
+        ('true','true'),
+        ('false','false')
+    )
+    root_skilled_job_offer=models.CharField(max_length=35, choices=choice6)
+    root_contact_details_residence_country=models.CharField(max_length=35)
+    root_contact_details_name=models.CharField(max_length=35)
+    root_contact_details_email=models.EmailField(max_length=35)
+    root_contact_details_telephone=models.IntegerField()
+
+    def __str__(self):
+        return self.root_age
+
+    def get_absolute_url(self):
+        return reverse('crs-list_crs_visa_consultant')
+

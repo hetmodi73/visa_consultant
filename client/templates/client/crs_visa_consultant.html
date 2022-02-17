@@ -59,12 +59,22 @@
 
     <link href="https://www.canadavisa.com/comprehensive-ranking-score-calculator.html" rel="canonical">
     <link href="https://www.canadavisa.com/" rel="home">
-    <link type="text/plain" href="https://www.canadavisa.com/humans.txt" rel="author"><script src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/36001102.js.download" type="text/javascript" async="" data-ueto="ueto_b2c5df96b0"></script></head>
-
+    <link type="text/plain" href="https://www.canadavisa.com/humans.txt" rel="author">
+    <script src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/36001102.js.download" type="text/javascript" async="" data-ueto="ueto_b2c5df96b0"></script>
+</head>
 
 <body>
+
 <fieldset>
-<script src="{% static 'CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/bat.js.download' %}" async=""></script><script type="text/javascript" async="" src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/atrk.js.download"></script><script type="text/javascript" async="" src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/insight.min.js.download"></script><script type="text/javascript" async="" src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/analytics.js.download"></script><script type="text/javascript" async="" src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/f.txt"></script><script type="text/javascript" async="" defer="" src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/matomo.js.download"></script><script defer="" src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/gtm.js.download"></script><script type="text/javascript">window.searchBarExpand = function(event)
+
+    <script src="{% static 'CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/bat.js.download' %}" async=""></script>
+    <script type="text/javascript" async="" src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/atrk.js.download"></script>
+    <script type="text/javascript" async="" src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/insight.min.js.download"></script>
+    <script type="text/javascript" async="" src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/analytics.js.download"></script>
+    <script type="text/javascript" async="" src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/f.txt"></script>
+    <script type="text/javascript" async="" defer="" src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/matomo.js.download"></script>
+    <script defer="" src="./CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/gtm.js.download"></script>
+    <script type="text/javascript">window.searchBarExpand = function(event)
         {
         var input = document.getElementById('searchBarInput');
         if( input.className.search('show') == -1 )
@@ -78,9 +88,8 @@
             input.focus();
         }
     }
-</script>
-<script src="CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/f(1).txt"></script>
-
+    </script>
+    <script src="CRS Calculator_ Calculate Your Express Entry CRS Score _ Canadavisa.com_files/f(1).txt"></script>
 
     <ul id="megaMenu12625" class="dropdown-menu mega-menu">
     </ul>
@@ -136,9 +145,13 @@
                                                 <option value="PhD">PHD/doctoral certificate</option>
                                             </select>
 <br></br>
-                                                <span>Have you studied in Canada : </span>
-                                                <button type="button" class="btn btn-margin-right btn-light" value="true">Yes</button>
-                                                <button type="button" class="btn btn-margin-right btn-light" value="false">No</button>
+                                                <span id="root_studied_in_canada">Have you studied in Canada : </span>
+<!--                                                <button type="button" class="btn btn-margin-right btn-light" value="true">Yes</button>-->
+<!--                                                <button type="button" class="btn btn-margin-right btn-light" value="false">No</button>-->
+
+                                                <input type="radio" name="root_studied_in_canada" value="true">Yes
+                                                <input type="radio" name="root_studied_in_canada" value="false">No
+
 <br></br>
                                                     <span>English proficiency : </span><br>
 <br></br>
@@ -281,30 +294,45 @@
                                                                 <option value="6">six years or more</option>
                                                             </select>
 <br></br>
-                                                <span>Are you Married or in a Common-Law Partnership ?
-                                                </span> &nbsp;
-                                                    <button type="button" class="btn btn-margin-right btn-light" value="true">Yes</button>
-                                                    <button type="button" class="btn btn-margin-right btn-light" value="false">No</button>
+                                                <span id="root_maratial_status">Are you Married or in a Common-Law Partnership ?
+                                                </span>
+<!--                                                    <button type="button" class="btn btn-margin-right btn-light" value="true">Yes</button>-->
+<!--                                                    <button type="button" class="btn btn-margin-right btn-light" value="false">No</button>-->
+
+                                                    <input type="radio" name="root_maratial_status" value="true">Yes
+                                                    <input type="radio" name="root_maratial_status" value="false">No
 
 <br></br>
                                     <div>
-                                                <span>Do you or your spouse/common-law partner have a sibling (brother or sister) who is a Canadian citizen or permanent resident, who is currently living in Canada and is 18 years of age or older?</span> &nbsp;
-                                                    <button type="button" class="btn btn-margin-right btn-light" value="true">Yes</button>
-                                                    <button type="button" class="btn btn-margin-right btn-light" value="false">No</button>
+                                                <span id="root_spouse_siblings">Do you or your spouse/common-law partner have a sibling (brother or sister) who is a Canadian citizen or permanent resident, who is currently living in Canada and is 18 years of age or older?</span> &nbsp;
+<!--                                                    <button type="button" class="btn btn-margin-right btn-light" value="true">Yes</button>-->
+<!--                                                    <button type="button" class="btn btn-margin-right btn-light" value="false">No</button>-->
+
+                                                    <input type="radio" name="root_spouse_siblings" value="true">Yes
+                                                    <input type="radio" name="root_spouse_siblings" value="false">No
+
                                     </div>
 <br></br>
                                     <div>
-                                                <span>Do you have a trades Certificate of Qualification issued by a Canadian Province or Territory (excluding Quebec and Nunavut)</span> &nbsp;
-                                                    <button type="button" class="btn btn-margin-right btn-light" value="true">Yes</button>
-                                                    <button type="button" class="btn btn-margin-right btn-light" value="false">No</button>
+                                                <span id="root_trades_certificate">Do you have a trades Certificate of Qualification issued by a Canadian Province or Territory (excluding Quebec and Nunavut)</span> &nbsp;
+<!--                                                    <button type="button" class="btn btn-margin-right btn-light" value="true">Yes</button>-->
+<!--                                                    <button type="button" class="btn btn-margin-right btn-light" value="false">No</button>-->
+
+                                                    <input type="radio" name="root_trades_certificate" value="true">Yes
+                                                    <input type="radio" name="root_trades_certificate" value="false">No
+
                                     </div>
 <br></br>
                                     <div>
                                         <span>Applicants can obtain extra points for Qualifying offers of Arranged Employment and Provincial Nomination Certificates</span>&nbsp; <br>
                                     </div>
-                                                <span>Have you applied for and received a Nomination Certificate from a Canadian Province or Territory? (excluding Quebec and Nunavut)</span> &nbsp;
-                                                    <button type="button" class="btn btn-margin-right btn-light" value="true">Yes</button>
-                                                    <button type="button" class="btn btn-margin-right btn-light" value="false">No</button>
+                                                <span id="root_nomination_certificate">Have you applied for and received a Nomination Certificate from a Canadian Province or Territory? (excluding Quebec and Nunavut)</span> &nbsp;
+<!--                                                    <button type="button" class="btn btn-margin-right btn-light" value="true">Yes</button>-->
+<!--                                                    <button type="button" class="btn btn-margin-right btn-light" value="false">No</button>-->
+
+                                                    <input type="radio" name="root_nomination_certificate" value="true">Yes
+                                                    <input type="radio" name="root_nomination_certificate" value="false">No
+
 <br></br>
                                         <fieldset>
                                             <div class="">
@@ -316,9 +344,14 @@
                                                     </div>
                                                     </span>&nbsp; <br>
                                                 </div>
-                                                            <span>Do you have a skilled job offer from a Canadian employer?</span> &nbsp;
-                                                                <button type="button" class="btn btn-margin-right btn-light" value="true">Yes</button>
-                                                                <button type="button" class="btn btn-margin-right btn-light" value="false">No</button>
+                                                            <span id="root_skilled_job_offer">Do you have a skilled job offer from a Canadian employer?</span> &nbsp;
+<!--                                                                <button type="button" class="btn btn-margin-right btn-light" value="true">Yes</button>-->
+<!--                                                                <button type="button" class="btn btn-margin-right btn-light" value="false">No</button>-->
+
+                                                                <input type="radio" name="root_skilled_job_offer" value="true">Yes
+                                                                <input type="radio" name="root_skilled_job_offer" value="false">No
+
+
                                             </div>
                                         </fieldset>
 <br></br>
@@ -352,8 +385,9 @@
                             <div align="center">
                                 <button type="submit" class="btn btn-primary btn-lg json-form-submit">Submit</button><br>
                             </div>
-                        <span style="display: none;">v2.0.0 R-Lite
-                    </span>
+
+<!--                        <span style="display: none;">v2.0.0 R-Lite-->
+<!--                    </span>-->
                     </div>
         <div id="skilledJobClassifierModal" class="modal fade">
         <div class="modal-dialog">

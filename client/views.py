@@ -1,8 +1,8 @@
 from django.contrib.auth import login
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from django.views.generic import CreateView,ListView
-from .models import user,document,service,service_detail,master_question,sub_question,feedback,contact
+from django.views.generic import CreateView,ListView,DetailView
+from .models import user,document,service,service_detail,master_question,sub_question,feedback,contact,crs
 
 # Create your views here.
 @login_required
@@ -24,6 +24,9 @@ def services(request):
 
 def typography(request):
     return render(request,"client/typography.html")
+
+def crs_visa_consultant(request):
+    return render(request,"client/crs_visa_consultant.html")
 
 def list_user_visa_consultant(request):
     return render(request,"client/list_user_visa_consultant.html")
@@ -49,8 +52,8 @@ def list_feedback_visa_consultant(request):
 def list_contact_visa_consultant(request):
     return render(request,"client/list_contact_visa_consultant.html")
 
-def crs_visa_consultant(request):
-    return render(request,"client/crs_visa_consultant.html")
+def list_crs_visa_consultant(request):
+    return render(request,"client/list_crs_visa_consultant.html")
 
 class NewUserView(CreateView):
     model = user
@@ -140,7 +143,20 @@ class ListContactView(ListView):
     context_object_name = 'client'
     template_name = 'client/list_contact_visa_consultant.html'
 
+class NewCrsView(CreateView):
+    model = crs
+    fields = '__all__'
+    # template_name = 'client/crs_visa_consultant.html'
+    # success_url = 'client/list_crs_visa_consultant.html'
 
+class ListCrsView(ListView):
+    model = crs
+    context_object_name = 'client'
+    template_name = 'client/list_crs_visa_consultant.html'
+
+class DetailCrsView(DetailView):
+    model = crs
+    success_url = 'client/list_crs_visa_consultant.html'
 
 
 from django.contrib import messages

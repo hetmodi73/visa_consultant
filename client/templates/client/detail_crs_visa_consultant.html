@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>crs</title>
+</head>
+<body>
+
+    <h1 align="center"> CRS Detail </h1>
+    <hr/>
+
+    <form method="post">
+        {% csrf_token %}
+
+         <div align="center">
+
+            <div class="col-md-6" align="left">
+
+            <div class="card card-primary card-outline" class="col-md-4">
+              <div class="card-body box-profile">
+
+                <ul class="list-group list-group-unbordered mb-3" >
+
+                    <li class="list-group-item">
+                    <b> Age: </b> <a class="float-right">{{ object.root_age }}</a>
+                    </li>
+
+                     <li class="list-group-item">
+                     <b> Education Level: </b> <a class="float-right">{{ object.root_education_level }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Studied in Canada: </b> <a class="float-right">{{ object.root_studied_in_canada }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> English Reading: </b> <a class="float-right">{{ object.root_english_reading }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> English Speaking: </b> <a class="float-right">{{ object.root_english_speaking }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> English Listening: </b> <a class="float-right">{{ object.root_english_listening }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> English Writing: </b> <a class="float-right">{{ object.root_english_writing }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> French Reading: </b> <a class="float-right">{{ object.root_french_reading }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> French Speaking: </b> <a class="float-right">{{ object.root_french_speaking }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> French Listening: </b> <a class="float-right">{{ object.root_french_listening }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> French Writing: </b> <a class="float-right">{{ object.root_french_writing }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Work Foreign Skilled Work Years: </b> <a class="float-right">{{ object.root_work_foreign_skilled_work_years }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Work Canadian Skilled Work Years: </b> <a class="float-right">{{ object.root_work_canadian_skilled_work_years }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Maratial Status: </b> <a class="float-right">{{ object.root_maratial_status }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Spouse Siblings: </b> <a class="float-right">{{ object.root_spouse_siblings }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Trades Certificate: </b> <a class="float-right">{{ object.root_trades_certificate }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Root Nomination Certificate: </b> <a class="float-right">{{ object.root_nomination_certificate }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Skilled Job Offer: </b> <a class="float-right">{{ object.root_skilled_job_offer }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Contact Details Residence Country: </b> <a class="float-right">{{ object.root_contact_details_residence_country }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Contact Details Name: </b> <a class="float-right">{{ object.root_contact_details_name }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Contact Details Email: </b> <a class="float-right">{{ object.root_contact_details_email }}</a>
+                     </li>
+
+                     <li class="list-group-item">
+                     <b> Contact Details Telephone: </b> <a class="float-right">{{ object.root_contact_details_telephone }}</a>
+                     </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+    </div>
+             <div align="center">
+                 <a href="{% url 'crs-list_crs_visa_consultant' %}" class="btn btn-info"><b>Back</b></a>
+            </div>
+
+    </div>
+
+    </form>
+
+</body>
+</html>
